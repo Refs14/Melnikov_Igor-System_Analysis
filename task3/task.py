@@ -13,5 +13,6 @@ def find_entropy(data: list) -> float:
                 H -= s*np.log2(s)
     return H
 
+
 data = "2,0,2,0,0\n0,1,0,0,1\n2,1,0,0,1\n0,1,0,1,1\n0,1,0,1,1"
 print(task(data))

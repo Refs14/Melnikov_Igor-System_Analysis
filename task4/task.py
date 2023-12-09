@@ -49,9 +49,8 @@ def rolls_to_chance(roll: list) -> list:
 def entropy(chance: list) -> float:
     H = 0.0
     for el in chance:
-        s = el/(len(chance) - 1)
-        if(s!=0):
-            H -= s*np.log2(s)
+        if(el!=0):
+            H -= el*np.log2(el)
     return H
 
 def task():
@@ -62,8 +61,9 @@ def task():
         for el2 in cube:
             muls[(el1-1)*6+(el2-1)] = el1*el2
     mul_chance = rolls_to_chance(muls)
+
     entropy_mul = entropy(mul_chance)
-    #print(mul_chance)
+    print(mul_chance)
     #print(entropy(mul_chance))
 
     sums = [0] * 36
@@ -98,4 +98,3 @@ print("H(A) = ", entropy_list[1])
 print("H(B) = ", entropy_list[2])
 print("H_A(B) = ", entropy_list[3])
 print("I(A,B) = ", entropy_list[4])
-

@@ -7,7 +7,6 @@ def sort_pair(roll: list[list]) -> list[list]:
             if(i < j and roll[i][0] > roll[j][0]):
                 (roll[i], roll[j]) = (roll[j], roll[i])
 
-
     for i in range(len(roll)):
         for j in range(len(roll)):
             if(i < j and roll[i][1] > roll[j][1] and roll[i][0] == roll[j][0]):
